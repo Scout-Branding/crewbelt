@@ -5,6 +5,7 @@ const TypeKit = () => {
   return (
     <Helmet>
       <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+      <link rel="preconnect" href="https://p.typekit.net" crossorigin />
       <link
         rel="preload"
         as="style"

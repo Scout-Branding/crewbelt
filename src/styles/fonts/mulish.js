@@ -53,28 +53,28 @@ const Mulish = () => {
         href={mulishRegular}
         as="font"
         type="font/woff2"
-        crossorigin
+        crossorigin="anonymous"
       />
       <link
         rel="preload"
         href={mulishMedium}
         as="font"
         type="font/woff2"
-        crossorigin
+        crossorigin="anonymous"
       />
       <link
         rel="preload"
         href={mulishBold}
         as="font"
         type="font/woff2"
-        crossorigin
+        crossorigin="anonymous"
       />
       <link
         rel="preload"
         href={mulishExtrabold}
         as="font"
         type="font/woff2"
-        crossorigin
+        crossorigin="anonymous"
       />
     </Helmet>
   )

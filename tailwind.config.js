@@ -22,6 +22,10 @@ module.exports = {
             contractor: "#ffb90a",
             manager: "#e62d37",
           },
+          gray: {
+            100: "#fafafa",
+            200: "#e6e6e6",
+          },
         },
       },
     },

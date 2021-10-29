@@ -14,9 +14,9 @@ const ButtonEl = styled.a`
   ${props => props.type === "secondary" && tw`bg-brand-secondary`}
 `
 
-const Button = ({ className, children, type }) => {
+const Button = ({ className, children, type, ...props }) => {
   return (
-    <ButtonEl className={className} {...{ type }}>
+    <ButtonEl className={className} {...{ type }} {...props}>
       {children}
     </ButtonEl>
   )

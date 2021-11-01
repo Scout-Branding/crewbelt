@@ -51,7 +51,7 @@ const LinkUnderline = styled.a`
   }
 `
 
-const Header = ({ siteTitle, portalLink }) => (
+const Header = ({ siteTitle, portalLink, appLinks }) => (
   <StyledHeader>
     <nav aria-label="Primary">
       <NavContainer>
@@ -81,18 +81,30 @@ const Header = ({ siteTitle, portalLink }) => (
         jobsites.
       </p>
       <div tw="w-7/12">
-        <Button
-          type="secondary"
-          tw="mr-2 inline-flex items-center flex-row"
-          href="#1"
-        >
-          <img src={iconIos} alt="" tw="w-4 h-4 mr-2" />
-          Download for iOS
-        </Button>
-        <Button tw="inline-flex items-center flex-row" href="#1">
-          <img src={iconWindows} alt="" tw="w-4 h-4 mr-2" />
-          Download for Windows
-        </Button>
+        {appLinks?.ios && (
+          <Button
+            type="secondary"
+            tw="mr-2 inline-flex items-center flex-row"
+            href={appLinks.ios}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={iconIos} alt="" tw="w-4 h-4 mr-2" />
+            Download for iOS
+          </Button>
+        )}
+
+        {appLinks?.microsoft && (
+          <Button
+            tw="inline-flex items-center flex-row"
+            href={appLinks.microsoft}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={iconWindows} alt="" tw="w-4 h-4 mr-2" />
+            Download for Windows
+          </Button>
+        )}
       </div>
     </Container>
 
@@ -110,6 +122,7 @@ const Header = ({ siteTitle, portalLink }) => (
 Header.propTypes = {
   siteTitle: PropTypes.string,
   portalLink: PropTypes.string,
+  appLinks: PropTypes.object,
 }
 
 Header.defaultProps = {

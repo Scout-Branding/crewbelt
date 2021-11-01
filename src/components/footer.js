@@ -8,7 +8,7 @@ import downloadIos from "../images/download-ios.svg"
 import downloadMicrosoft from "../images/download-microsoft.svg"
 
 const StyledFooter = styled.footer`
-  ${tw`pt-12 text-sm leading-relaxed tracking-wide text-white pb-9 bg-brand-black`}
+  ${tw`pt-16 text-sm leading-relaxed tracking-wide text-white pb-9 bg-brand-black`}
 `
 
 const StyledContainer = styled(Container)`
@@ -29,15 +29,15 @@ const Colophon = styled.div`
   }
 `
 
-const Footer = ({ siteTitle, portalLink }) => {
+const Footer = ({ siteTitle, portalLink, appLinks }) => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <div tw="w-1/4 mb-12">
+        <div tw="w-1/4 mb-16">
           <img src={logoIcon} alt={siteTitle} tw="w-24" />
         </div>
 
-        <div tw="w-1/4 mb-12">
+        <div tw="w-1/4 mb-16">
           <span tw="font-extrabold">Need Help?</span>
           <br />
           <FooterLink
@@ -47,7 +47,7 @@ const Footer = ({ siteTitle, portalLink }) => {
           <FooterLink link="tel:+18885550000" title="888.555.0000" />
         </div>
 
-        <div tw="w-1/4 mb-12">
+        <div tw="w-1/4 mb-16">
           {portalLink && (
             <FooterLink
               link={portalLink}
@@ -59,29 +59,30 @@ const Footer = ({ siteTitle, portalLink }) => {
           <FooterLink link="#privacy" target="_blank" title="Privacy Policy" />
         </div>
 
-        <div tw="w-1/4 mb-12 text-right">
-          <a
-            href="https://apps.apple.com/us/app/dropbox-cloud-storage-drive/id327630330?itsct=apps_box_link&itscg=30200"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={downloadIos}
-              alt="Download on the App Store"
-              tw="h-12 inline-block mr-4"
-            />
-          </a>
-          <a
-            href="https://www.microsoft.com/en-us/p/dropbox-for-s-mode/9wzdncrfj0pk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={downloadMicrosoft}
-              alt="Get it from Microsoft"
-              tw="h-12 inline-block"
-            />
-          </a>
+        <div tw="w-1/4 mb-16 text-right">
+          {appLinks?.ios && (
+            <a href={appLinks.ios} target="_blank" rel="noopener noreferrer">
+              <img
+                src={downloadIos}
+                alt="Download on the App Store"
+                tw="h-12 inline-block mr-4"
+              />
+            </a>
+          )}
+
+          {appLinks?.microsoft && (
+            <a
+              href={appLinks.microsoft}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={downloadMicrosoft}
+                alt="Get it from Microsoft"
+                tw="h-12 inline-block"
+              />
+            </a>
+          )}
         </div>
 
         <Colophon id="colophon">
@@ -116,6 +117,7 @@ const Footer = ({ siteTitle, portalLink }) => {
 Footer.propTypes = {
   siteTitle: PropTypes.string,
   portalLink: PropTypes.string,
+  appLinks: PropTypes.object,
 }
 
 Footer.defaultProps = {

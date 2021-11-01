@@ -19,20 +19,30 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
           portalLink
+          appLinks {
+            ios
+            microsoft
+          }
         }
       }
     }
   `)
 
+  const meta = data.site.siteMetadata
+
   return (
     <>
       <ThemeStyles />
       <Header
-        siteTitle={data.site.siteMetadata?.title || `Title`}
-        portalLink={data.site.siteMetadata?.portalLink || ``}
+        siteTitle={meta?.title || `Title`}
+        portalLink={meta?.portalLink || ``}
+        appLinks={meta?.appLinks || {}}
       />
       <main>{children}</main>
-      <Footer portalLink={data.site.siteMetadata?.portalLink || ``} />
+      <Footer
+        portalLink={meta?.portalLink || ``}
+        appLinks={meta?.appLinks || {}}
+      />
     </>
   )
 }

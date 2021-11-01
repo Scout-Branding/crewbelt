@@ -33,8 +33,10 @@ function Seo({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={title || defaultTitle}
+      titleTemplate={
+        title !== defaultTitle ? `%s | ${defaultTitle}` : defaultTitle
+      }
       meta={[
         {
           name: `description`,
@@ -77,13 +79,14 @@ Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: ``,
 }
 
 Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default Seo

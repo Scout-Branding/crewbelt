@@ -2,7 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 
-const ButtonEl = styled.a`
+const StyledButton = styled.a`
   ${tw`inline-block px-6 py-2 text-sm tracking-wide text-white uppercase transition transform translate-y-0 rounded-full cursor-pointer bg-brand-secondary`}
 
   &:hover {
@@ -16,9 +16,9 @@ const ButtonEl = styled.a`
 
 const Button = ({ className, children, type, ...props }) => {
   return (
-    <ButtonEl className={className} {...{ type }} {...props}>
+    <StyledButton className={className} {...{ type }} {...props}>
       {children}
-    </ButtonEl>
+    </StyledButton>
   )
 }
 

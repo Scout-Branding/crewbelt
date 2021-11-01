@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `CrewBelt`,
     description: `Go from connection to construction, on demand.`,
-    author: `@joshuafredrickson`,
+    author: `@scoutbranding`,
     siteUrl: `https://crewbelt.com/`,
+    portalLink: `#1`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,7 +46,7 @@ module.exports = {
             type: `image/png`,
           },
           {
-            src: `src/images/favicons//android-chrome-512x512.png`,
+            src: `src/images/favicons/android-chrome-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },

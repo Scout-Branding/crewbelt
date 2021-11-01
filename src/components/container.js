@@ -2,12 +2,12 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 
-const ContainerDiv = styled.div`
+const StyledContainer = styled.div`
   ${tw`container mx-auto`}
 `
 
 const Container = ({ className, children }) => {
-  return <ContainerDiv className={className}>{children}</ContainerDiv>
+  return <StyledContainer className={className}>{children}</StyledContainer>
 }
 
 Container.propTypes = {

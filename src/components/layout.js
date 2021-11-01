@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import ThemeStyles from "../styles/theme-styles"
 import Header from "./header"
-import Container from "./container"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          portalLink
         }
       }
     }
@@ -26,19 +27,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeStyles />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+        portalLink={data.site.siteMetadata?.portalLink || ``}
+      />
       <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        <Container>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </Container>
-      </footer>
+      <Footer portalLink={data.site.siteMetadata?.portalLink || ``} />
     </>
   )
 }

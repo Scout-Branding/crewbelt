@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily, colors } = require("tailwindcss/defaultTheme")
 
 module.exports = {
   darkMode: false, // or 'media' or 'class'

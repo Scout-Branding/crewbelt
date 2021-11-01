@@ -51,7 +51,7 @@ const LinkUnderline = styled.a`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, portalLink }) => (
   <StyledHeader>
     <nav aria-label="Primary">
       <NavContainer>
@@ -59,9 +59,15 @@ const Header = ({ siteTitle }) => (
           <img src={logo} alt={siteTitle} />
         </Brand>
         <div>
-          <LinkUnderline href="#1" target="_blank" rel="nofollow noopener">
-            Project Manager Portal
-          </LinkUnderline>
+          {portalLink && (
+            <LinkUnderline
+              href={portalLink}
+              target="_blank"
+              rel="nofollow noopener"
+            >
+              Project Manager Portal
+            </LinkUnderline>
+          )}
         </div>
       </NavContainer>
     </nav>
@@ -103,10 +109,12 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  portalLink: PropTypes.string,
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  portalLink: ``,
 }
 
 export default Header

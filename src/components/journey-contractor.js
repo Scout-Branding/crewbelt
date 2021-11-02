@@ -1,22 +1,12 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import tw, { styled } from "twin.macro"
+import FeaturesContractor from "./features-contractor"
 
-const StyledContainer = styled.div`
-  ${tw`container mx-auto`}
-`
-
-const JourneyContractor = ({ className, children }) => {
+const JourneyContractor = () => {
   return (
-    <StyledContainer className={className}>
-      {children}Contractor
-    </StyledContainer>
+    <>
+      <FeaturesContractor />
+    </>
   )
-}
-
-JourneyContractor.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
 }
 
 export default JourneyContractor

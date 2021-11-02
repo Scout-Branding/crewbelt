@@ -1,8 +1,11 @@
 import * as React from "react"
 import tw, { styled } from "twin.macro"
+import { SwitchTransition, CSSTransition } from "react-transition-group"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Container from "../components/container"
+import JourneyContractor from "../components/journey-contractor"
+import JourneyManager from "../components/journey-manager"
 import diamondPlate from "../images/diamond-plate.svg"
 
 const How = styled.div`
@@ -32,32 +35,89 @@ const TabButton = styled.button`
     transform-property: background-color, width;
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    &::before {
-      ${tw`w-24 bg-brand-highlight-contractor`}
+  &:hover::before {
+    ${tw`w-24 bg-brand-highlight-contractor`}
+  }
+`
+
+const StyledTransition = styled.div`
+  ${tw`overflow-hidden`}
+
+  &.fade-enter {
+    opacity: 0;
+
+    & > * {
+      opacity: 0;
+      transform: translateX(var(--journey-enter-translate-x, 20%));
+    }
+  }
+
+  &.fade-exit {
+    opacity: 1;
+
+    & > * {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  &.fade-enter-active {
+    opacity: 1;
+
+    & > * {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  &.fade-exit-active {
+    opacity: 0;
+
+    & > * {
+      opacity: 0;
+      transform: translateX(var(--journey-exit-translate-x, -20%));
+    }
+  }
+
+  &.fade-enter-active,
+  &.fade-exit-active {
+    transition: opacity 250ms;
+
+    & > * {
+      transition: opacity 250ms, transform 250ms;
     }
   }
 `
 
 const IndexPage = () => {
   const [tabIndex, setTabIndex] = React.useState(parseInt(0))
-  const tabs = React.useRef()
+  const [journey, setJourney] = React.useState("contractor")
+  const tabsRef = React.useRef()
+  const journeysRef = React.useRef()
 
   const handleClick = event => {
     setTabIndex(event.target.dataset.index)
+    setJourney(event.target.dataset.journey)
   }
 
   React.useEffect(() => {
-    if (!tabs.current) {
-      return
+    if (tabsRef.current) {
+      tabsRef.current.style.setProperty(
+        "--tabs-active-position",
+        `${tabIndex * 0.5 * 100}%`
+      )
     }
 
-    tabs.current.style.setProperty(
-      "--tabs-active-position",
-      `${tabIndex * 0.5 * 100}%`
-    )
+    if (journeysRef.current) {
+      journeysRef.current.style.setProperty(
+        "--journey-exit-translate-x",
+        `${tabIndex < 1 ? "-5%" : "5%"}`
+      )
+      journeysRef.current.style.setProperty(
+        "--journey-enter-translate-x",
+        `${tabIndex < 1 ? "5%" : "-5%"}`
+      )
+    }
   }, [tabIndex])
 
   return (
@@ -69,15 +129,34 @@ const IndexPage = () => {
         </Container>
       </How>
       <Container>
-        <Tabs ref={tabs}>
-          <TabButton onClick={handleClick} data-index={0}>
+        <Tabs ref={tabsRef}>
+          <TabButton
+            onClick={handleClick}
+            data-index={0}
+            data-journey="contractor"
+          >
             I'm an Independent Electrician
           </TabButton>
-          <TabButton onClick={handleClick} data-index={1}>
+          <TabButton
+            onClick={handleClick}
+            data-index={1}
+            data-journey="manager"
+          >
             I'm a Project Manager
           </TabButton>
         </Tabs>
       </Container>
+
+      <div ref={journeysRef}>
+        <SwitchTransition>
+          <CSSTransition key={journey} classNames="fade" timeout={200}>
+            <StyledTransition>
+              {journey === "contractor" && <JourneyContractor />}
+              {journey === "manager" && <JourneyManager />}
+            </StyledTransition>
+          </CSSTransition>
+        </SwitchTransition>
+      </div>
     </Layout>
   )
 }

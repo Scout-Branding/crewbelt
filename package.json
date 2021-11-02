@@ -27,6 +27,7 @@
     "@emotion/styled": "^11.3.0",
     "gatsby-plugin-emotion": "^7.0.0",
     "prettier": "^2.4.1",
+    "react-transition-group": "^4.4.2",
     "twin.macro": "^2.8.1"
   },
   "keywords": [

@@ -33,6 +33,17 @@ const Image = props => (
         return null
       }
 
+      if (props.fit && props.fit === "cover") {
+        return (
+          <GatsbyImage
+            alt={props.alt}
+            image={getImage(image.node.childImageSharp)}
+            loading="lazy"
+            className={props.className}
+          />
+        )
+      }
+
       return (
         <GatsbyImage
           alt={props.alt}

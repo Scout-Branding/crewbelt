@@ -4,11 +4,9 @@ import tw, { styled } from "twin.macro"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Container from "./container"
+import AppButtons from "./app-buttons"
 import headerBg from "../images/header-bg.svg"
 import logo from "../images/crewbelt-logo.svg"
-import iconIos from "../images/icon-ios.svg"
-import iconWindows from "../images/icon-windows.svg"
-import Button from "./button"
 
 const StyledHeader = styled.header`
   ${tw`relative py-24 bg-center bg-no-repeat`}
@@ -81,30 +79,7 @@ const Header = ({ siteTitle, portalLink, appLinks }) => (
         jobsites.
       </p>
       <div tw="w-7/12">
-        {appLinks?.ios && (
-          <Button
-            type="secondary"
-            tw="mr-2 inline-flex items-center flex-row"
-            href={appLinks.ios}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={iconIos} alt="" tw="w-4 h-4 mr-2" />
-            Download for iOS
-          </Button>
-        )}
-
-        {appLinks?.microsoft && (
-          <Button
-            tw="inline-flex items-center flex-row"
-            href={appLinks.microsoft}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={iconWindows} alt="" tw="w-4 h-4 mr-2" />
-            Download for Windows
-          </Button>
-        )}
+        <AppButtons />
       </div>
     </Container>
 

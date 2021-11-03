@@ -1,5 +1,5 @@
 import * as React from "react"
-import tw, { styled } from "twin.macro"
+import tw, { styled, theme } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Features from "./features"
@@ -29,6 +29,12 @@ const JourneyManager = () => {
 
   return (
     <>
+      <style>
+        {`:root{
+          --heading-color: ${theme`colors.brand.highlight.manager`};
+          --feature-highlight: ${theme`colors.brand.highlight.manager`};
+        }`}
+      </style>
       <Features
         heading="Find and hire quality labor with a streamlined recruitment process."
         type="desktop"

@@ -2,8 +2,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 import Container from "./container"
-import iconCheck from "../images/icon-check.svg"
 import AppButtons from "./app-buttons"
+import IconCheck from "../icons/icon-check"
 
 const StyledCoverImage = styled.section`
   ${tw`relative py-24 bg-brand-primaryFaded`}
@@ -30,7 +30,7 @@ const CoverImage = ({ className, list, heading, children }) => {
             {list.map((item, i) => (
               <li key={i} tw="mb-4 text-2xl font-medium flex">
                 <CheckWrap>
-                  <img src={iconCheck} alt="" />
+                  <IconCheck />
                 </CheckWrap>
                 <span tw="pt-1">{item}</span>
               </li>

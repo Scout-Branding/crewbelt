@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import tw, { styled, css } from "twin.macro"
+import tw, { styled, css, theme } from "twin.macro"
 
 const StyledFeature = styled.li`
   ${tw`relative py-6`}
@@ -37,8 +37,10 @@ const StyledFeature = styled.li`
     ${tw`font-extrabold cursor-pointer`}
 
     &::before {
-      ${tw`bg-brand-highlight-contractor`}
-
+      background-color: var(
+        --feature-highlight,
+        ${theme`colors.brand.highlight.contractor`}
+      );
       height: calc(100% - 2rem);
     }
   }

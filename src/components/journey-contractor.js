@@ -1,5 +1,5 @@
 import * as React from "react"
-import tw, { styled } from "twin.macro"
+import tw, { styled, theme } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Features from "./features"
@@ -29,6 +29,11 @@ const JourneyContractor = () => {
 
   return (
     <>
+      <style>
+        {`:root{
+          --heading-color: ${theme`colors.brand.primary`};
+        }`}
+      </style>
       <Features
         heading="CrewBelt gives you the freedom to find jobs that fit your skillset."
         type="mobile"

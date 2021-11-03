@@ -6,8 +6,6 @@ import { H3 } from "./headings"
 
 const StyledRow = styled.section`
   ${tw`py-24 bg-brand-gray-200`}
-
-  --heading-color: ${theme`colors.brand.primary`}
 `
 
 const IconRow = ({ className, children, heading }) => {

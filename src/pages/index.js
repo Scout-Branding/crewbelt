@@ -1,5 +1,5 @@
 import * as React from "react"
-import tw, { styled } from "twin.macro"
+import tw, { styled, theme } from "twin.macro"
 import { SwitchTransition, CSSTransition } from "react-transition-group"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
@@ -36,7 +36,16 @@ const TabButton = styled.button`
   }
 
   &:hover::before {
-    ${tw`w-24 bg-brand-highlight-contractor`}
+    ${tw`w-24`}
+
+    background-color: var(
+      --tabs-highlight,
+      ${theme`colors.brand.highlight.contractor`}
+    );
+  }
+
+  &[data-journey="manager"] {
+    --tabs-highlight: ${theme`colors.brand.highlight.manager`};
   }
 `
 

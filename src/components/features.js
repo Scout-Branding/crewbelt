@@ -14,7 +14,7 @@ const StyledImage = styled(Image)`
 
 const Features = ({ heading, features, type }) => {
   const [activeFeature, setActiveFeature] = React.useState(0)
-  const featuresHalfCount = Math.ceil(features.length / 2)
+  const featuresHalfCount = Math.floor(features.length / 2)
   const featuresLeft = features.slice(0, featuresHalfCount)
   const featuresRight = features.slice(featuresHalfCount, features.length)
 

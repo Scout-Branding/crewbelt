@@ -89,13 +89,30 @@ const StyledTransition = styled.div`
   }
 `
 
+const SwitchJourneys = styled.button`
+  ${tw`w-full text-xl tracking-wider text-center text-white uppercase py-9 bg-brand-primary font-display`}
+
+  span {
+    ${tw`transition-colors border-b border-transparent pointer-events-none`}
+  }
+
+  &:hover {
+    span {
+      ${tw`border-white`}
+    }
+  }
+`
+
 const IndexPage = () => {
   const [tabIndex, setTabIndex] = React.useState(parseInt(0))
   const [journey, setJourney] = React.useState("contractor")
+  const [firstLoad, setFirstLoad] = React.useState(false)
   const tabsRef = React.useRef()
   const journeysRef = React.useRef()
+  const scrollToRef = React.useRef()
 
   const handleClick = event => {
+    setFirstLoad(true)
     setTabIndex(event.target.dataset.index)
     setJourney(event.target.dataset.journey)
   }
@@ -123,7 +140,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo />
-      <How>
+      <How ref={scrollToRef}>
         <Container>
           <h2 tw="font-extrabold text-3xl">How will you be using CrewBelt?</h2>
         </Container>
@@ -149,10 +166,46 @@ const IndexPage = () => {
 
       <div ref={journeysRef}>
         <SwitchTransition>
-          <CSSTransition key={journey} classNames="fade" timeout={200}>
+          <CSSTransition
+            key={journey}
+            classNames="fade"
+            timeout={200}
+            onEntered={() => {
+              if (!scrollToRef.current || !firstLoad) {
+                return
+              }
+
+              scrollToRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }}
+          >
             <StyledTransition>
-              {journey === "contractor" && <JourneyContractor />}
-              {journey === "manager" && <JourneyManager />}
+              {journey === "contractor" && (
+                <>
+                  <JourneyContractor />
+                  <SwitchJourneys
+                    onClick={handleClick}
+                    data-index={1}
+                    data-journey="manager"
+                  >
+                    <span>View as Project Manager</span>
+                  </SwitchJourneys>
+                </>
+              )}
+              {journey === "manager" && (
+                <>
+                  <JourneyManager />
+                  <SwitchJourneys
+                    onClick={handleClick}
+                    data-index={0}
+                    data-journey="contractor"
+                  >
+                    <span>View as Independent Contractor</span>
+                  </SwitchJourneys>
+                </>
+              )}
             </StyledTransition>
           </CSSTransition>
         </SwitchTransition>

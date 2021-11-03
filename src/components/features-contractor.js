@@ -1,18 +1,15 @@
 import * as React from "react"
-import tw, { styled } from "twin.macro"
+import "twin.macro"
 import Container from "./container"
 import Features from "./features"
-
-const Heading = styled.h2`
-  ${tw`mb-12 text-4xl font-medium text-center`}
-`
+import { H2 } from "./headings"
 
 const FeaturesContractor = () => {
   return (
     <Container tw="py-12">
-      <Heading>
+      <H2>
         CrewBelt gives you the freedom to find jobs that fit your skillset.
-      </Heading>
+      </H2>
 
       <Features
         features={[

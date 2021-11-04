@@ -6,6 +6,8 @@ import FooterLink from "./footer-link"
 import logoIcon from "../images/crewbelt-logo-icon.svg"
 import downloadIos from "../images/download-ios.svg"
 import downloadMicrosoft from "../images/download-microsoft.svg"
+import termsOfUse from "../static/terms-of-use.pdf"
+import privacyPolicy from "../static/privacy-policy.pdf"
 
 const StyledFooter = styled.footer`
   ${tw`pt-16 text-sm leading-relaxed tracking-wide text-white pb-9 bg-brand-black`}
@@ -55,8 +57,12 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
               title="Project Manager Portal"
             />
           )}
-          <FooterLink link="#terms" target="_blank" title="Terms of use" />
-          <FooterLink link="#privacy" target="_blank" title="Privacy Policy" />
+          <FooterLink link={termsOfUse} target="_blank" title="Terms of use" />
+          <FooterLink
+            link={privacyPolicy}
+            target="_blank"
+            title="Privacy Policy"
+          />
         </div>
 
         <div tw="w-1/4 mb-16 text-right">

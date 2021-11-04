@@ -4,7 +4,7 @@ module.exports = {
     description: `Go from connection to construction, on demand.`,
     author: `@scoutbranding`,
     siteUrl: `https://crewbelt.com/`,
-    portalLink: `#1`,
+    portalLink: `https://www.crewbelt.com/account/sign-in`,
     appLinks: {
       microsoft: `https://www.microsoft.com/en-us/p/dropbox-for-s-mode/9wzdncrfj0pk`,
       ios: `https://apps.apple.com/us/app/dropbox-cloud-storage-drive/id327630330?itsct=apps_box_link&itscg=30200`,

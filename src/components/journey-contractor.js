@@ -41,27 +41,27 @@ const JourneyContractor = () => {
         features={[
           {
             text: "Market yourself with a customizable profile",
-            image: "features-mobile.png",
+            image: "test-1.png",
           },
           {
             text: "Quickly apply for projects that interest you",
-            image: "header-phone.png",
+            image: "test-2.png",
           },
           {
             text: "Negotiate your pay rate",
-            image: "features-mobile.png",
+            image: "test-1.png",
           },
           {
             text: "Electronically submit your time",
-            image: "features-mobile.png",
+            image: "test-2.png",
           },
           {
             text: "Receive payment via direct deposit",
-            image: "features-mobile.png",
+            image: "test-1.png",
           },
           {
             text: "Earn more opportunities through the rating system",
-            image: "features-mobile.png",
+            image: "test-2.png",
           },
         ]}
       />
@@ -86,7 +86,7 @@ const JourneyContractor = () => {
           "Customize your profile",
           "Browse listings and apply with a tap",
         ]}
-        callToAction={<AppButtons/>}
+        callToAction={<AppButtons />}
       >
         {coverImage && (
           <StyledCoverImage

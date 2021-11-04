@@ -1,16 +1,65 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import tw, { styled } from "twin.macro"
+import tw, { styled, css } from "twin.macro"
 import Container from "./container"
 import { H2 } from "./headings"
 import Feature from "./feature"
 import Image from "./image"
+import bgMobile from "../images/mask-mobile.png"
+import bgDesktop from "../images/mask-desktop.png"
 
-const StyledImage = styled(Image)`
-  ${tw`px-24`}
-  height: 80vh;
-  max-height: 600px;
+const styledImageVariants = {
+  mobile: css`
+    ${tw`w-1/4`}
+
+    &::before {
+      background-image: url(${bgMobile});
+    }
+
+    img {
+      padding: 13% 0;
+    }
+  `,
+  desktop: css`
+    ${tw`w-2/3`}
+
+    &::before {
+      background-image: url(${bgDesktop});
+    }
+
+    img {
+      padding: 20% 0;
+    }
+  `,
+}
+
+const StyledImage = styled(Image)(() => [
+  css`
+    ${tw`absolute top-0 bottom-0 transform -translate-x-1/2 left-1/2`}
+    height: 600px;
+
+    &::before {
+      ${tw`absolute inset-0 z-10 bg-center bg-no-repeat bg-cover`}
+      content: "";
+    }
+  `,
+  ({ type = "mobile" }) => styledImageVariants[type],
+])
+
+const FeaturesWrap = styled.div`
+  ${tw`relative flex items-center justify-between overflow-hidden text-2xl font-medium`}
+  min-height: 600px;
 `
+
+const featureListVariants = {
+  mobile: tw`w-1/3`,
+  desktop: tw`w-1/4`,
+}
+
+const FeatureList = styled.ul(() => [
+  tw`relative z-20`,
+  ({ type = "mobile" }) => featureListVariants[type],
+])
 
 const Features = ({ heading, features, type }) => {
   const [activeFeature, setActiveFeature] = React.useState(0)
@@ -25,9 +74,8 @@ const Features = ({ heading, features, type }) => {
   return (
     <Container tw="py-12">
       {heading && <H2>{heading}</H2>}
-
-      <div tw="flex items-center font-medium text-2xl">
-        <ul tw="w-1/3">
+      <FeaturesWrap>
+        <FeatureList {...{ type }}>
           {featuresLeft.map((feature, i) => {
             const featureIndex = features.length - (features.length - i)
             return (
@@ -42,13 +90,14 @@ const Features = ({ heading, features, type }) => {
               </Feature>
             )
           })}
-        </ul>
+        </FeatureList>
         <StyledImage
           alt={features[activeFeature].text}
           filename={features[activeFeature].image}
           imgStyle={{ objectFit: "contain" }}
+          {...{ type }}
         />
-        <ul tw="w-1/3">
+        <FeatureList {...{ type }}>
           {featuresRight.map((feature, i) => {
             const featureIndex =
               features.length - (features.length - (i + featuresHalfCount))
@@ -63,8 +112,8 @@ const Features = ({ heading, features, type }) => {
               </Feature>
             )
           })}
-        </ul>
-      </div>
+        </FeatureList>
+      </FeaturesWrap>
     </Container>
   )
 }

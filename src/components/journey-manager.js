@@ -47,31 +47,31 @@ const JourneyManager = () => {
         features={[
           {
             text: "Quickly find talent to hire for a job",
-            image: "features-mobile.png",
+            image: "test-desktop-1.png",
           },
           {
             text: "See tradesman ratings from past engagements",
-            image: "header-phone.png",
+            image: "test-desktop-2.png",
           },
           {
             text: "Search for applicants with a specific skill set",
-            image: "features-mobile.png",
+            image: "test-desktop-1.png",
           },
           {
             text: "Negotiate pay rate",
-            image: "features-mobile.png",
+            image: "test-desktop-2.png",
           },
           {
             text: "Collect time electronically",
-            image: "features-mobile.png",
+            image: "test-desktop-1.png",
           },
           {
             text: "Receive automated invoices",
-            image: "features-mobile.png",
+            image: "test-desktop-2.png",
           },
           {
             text: "Pay automatically upon approval of invoice",
-            image: "features-mobile.png",
+            image: "test-desktop-1.png",
           },
         ]}
       />

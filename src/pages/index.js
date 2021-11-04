@@ -66,7 +66,7 @@ const StyledTransition = styled.div`
 
     & > * {
       opacity: 1;
-      transform: translateX(0%);
+      transform: translateX(0);
     }
   }
 
@@ -75,7 +75,7 @@ const StyledTransition = styled.div`
 
     & > * {
       opacity: 1;
-      transform: translateX(0%);
+      transform: translateX(0);
     }
   }
 

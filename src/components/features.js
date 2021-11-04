@@ -1,12 +1,67 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled, css } from "twin.macro"
+import { SwitchTransition, CSSTransition } from "react-transition-group"
 import Container from "./container"
 import { H2 } from "./headings"
 import Feature from "./feature"
 import Image from "./image"
 import bgMobile from "../images/mask-mobile.png"
 import bgDesktop from "../images/mask-desktop.png"
+
+const FeaturesWrap = styled.div`
+  ${tw`relative flex items-center justify-between overflow-hidden text-2xl font-medium`}
+  min-height: 600px;
+`
+
+const featureListVariants = {
+  mobile: tw`w-1/3`,
+  desktop: tw`w-1/4`,
+}
+
+const FeatureList = styled.ul(() => [
+  tw`relative z-20`,
+  ({ type = "mobile" }) => featureListVariants[type],
+])
+
+const StyledTransition = styled.div`
+  .fade-enter {
+    [data-main-image] {
+      ${tw`(transform translate-y-1/2 opacity-0)!`}
+    }
+  }
+
+  .fade-exit {
+    [data-main-image] {
+      ${tw`(transform translate-y-0 opacity-100)!`}
+    }
+  }
+
+  .fade-enter-active {
+    [data-main-image] {
+      ${tw`(translate-y-0 opacity-100)!`}
+    }
+  }
+
+  .fade-exit-active {
+    [data-main-image] {
+      ${tw`(translate-y-1/2 opacity-0)!`}
+    }
+  }
+
+  .fade-enter {
+    [data-main-image] {
+      transition: opacity 100ms, transform 100ms;
+      will-change: opacity, transform;
+    }
+  }
+
+  .fade-exit {
+    [data-main-image] {
+      transition: opacity 250ms, transform 250ms !important;
+    }
+  }
+`
 
 const styledImageVariants = {
   mobile: css`
@@ -46,21 +101,6 @@ const StyledImage = styled(Image)(() => [
   ({ type = "mobile" }) => styledImageVariants[type],
 ])
 
-const FeaturesWrap = styled.div`
-  ${tw`relative flex items-center justify-between overflow-hidden text-2xl font-medium`}
-  min-height: 600px;
-`
-
-const featureListVariants = {
-  mobile: tw`w-1/3`,
-  desktop: tw`w-1/4`,
-}
-
-const FeatureList = styled.ul(() => [
-  tw`relative z-20`,
-  ({ type = "mobile" }) => featureListVariants[type],
-])
-
 const Features = ({ heading, features, type }) => {
   const [activeFeature, setActiveFeature] = React.useState(0)
   const featuresHalfCount = Math.floor(features.length / 2)
@@ -91,12 +131,20 @@ const Features = ({ heading, features, type }) => {
             )
           })}
         </FeatureList>
-        <StyledImage
-          alt={features[activeFeature].text}
-          filename={features[activeFeature].image}
-          imgStyle={{ objectFit: "contain" }}
-          {...{ type }}
-        />
+
+        <StyledTransition>
+          <SwitchTransition>
+            <CSSTransition key={activeFeature} classNames="fade" timeout={200}>
+              <StyledImage
+                alt={features[activeFeature].text}
+                filename={features[activeFeature].image}
+                imgStyle={{ objectFit: "contain" }}
+                {...{ type }}
+              />
+            </CSSTransition>
+          </SwitchTransition>
+        </StyledTransition>
+
         <FeatureList {...{ type }}>
           {featuresRight.map((feature, i) => {
             const featureIndex =

@@ -5,10 +5,11 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Features from "./features"
 import IconRow from "./icon-row"
 import IconWrap from "./icon-wrap"
+import CoverImage from "./cover-image"
+import AppButtons from "./app-buttons"
 import iconCalendar from "../images/icon-calendar.svg"
 import iconContractor from "../images/icon-contractor.svg"
 import iconMap from "../images/icon-map.svg"
-import CoverImage from "./cover-image"
 
 const StyledCoverImage = styled(GatsbyImage)`
   ${tw`absolute inset-0`}
@@ -85,6 +86,7 @@ const JourneyContractor = () => {
           "Customize your profile",
           "Browse listings and apply with a tap",
         ]}
+        callToAction={<AppButtons/>}
       >
         {coverImage && (
           <StyledCoverImage

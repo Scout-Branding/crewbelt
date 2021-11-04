@@ -5,22 +5,28 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Features from "./features"
 import IconRow from "./icon-row"
 import IconWrap from "./icon-wrap"
-import iconCalendar from "../images/icon-calendar.svg"
-import iconContractor from "../images/icon-contractor.svg"
-import iconMap from "../images/icon-map.svg"
 import CoverImage from "./cover-image"
+import Button from "./button"
+import iconMoney from "../images/icon-money.svg"
+import iconSelect from "../images/icon-select.svg"
+import IconMap from "../icons/icon-map"
 
 const StyledCoverImage = styled(GatsbyImage)`
   ${tw`absolute inset-0`}
 `
 
 const JourneyManager = () => {
-  const { coverImage } = useStaticQuery(
+  const { coverImage, meta } = useStaticQuery(
     graphql`
       query {
         coverImage: file(relativePath: { eq: "cover-manager.jpg" }) {
           childImageSharp {
             gatsbyImageData(width: 1600)
+          }
+        }
+        meta: site {
+          siteMetadata {
+            portalLink
           }
         }
       }
@@ -71,15 +77,15 @@ const JourneyManager = () => {
       />
       <IconRow heading="As a project manager, CrewBelt provides:">
         <IconWrap>
-          <img src={iconContractor} alt="" />A cost-effective solution to engage
+          <img src={iconMoney} alt="" />A cost-effective solution to engage
           quality contract labor
         </IconWrap>
         <IconWrap>
-          <img src={iconMap} alt="" />
+          <img src={iconSelect} alt="" />
           Transparency and visibility into the contract labor force
         </IconWrap>
         <IconWrap>
-          <img src={iconCalendar} alt="" />
+          <IconMap />
           Broadened access to a skilled workforce
         </IconWrap>
       </IconRow>
@@ -90,6 +96,19 @@ const JourneyManager = () => {
           "Create a job description and post it to our marketplace",
           "Review and select qualified applicants to hire for your project",
         ]}
+        callToAction={
+          meta?.siteMetadata?.portalLink && (
+            <Button
+              type="primary"
+              tw="mr-2 inline-flex items-center flex-row"
+              href={meta.siteMetadata.portalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Create an Account
+            </Button>
+          )
+        }
       >
         {coverImage && (
           <StyledCoverImage

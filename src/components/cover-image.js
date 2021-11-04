@@ -2,7 +2,6 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 import Container from "./container"
-import AppButtons from "./app-buttons"
 import IconCheck from "../icons/icon-check"
 
 const StyledCoverImage = styled.section`
@@ -19,7 +18,7 @@ const CheckWrap = styled.span`
   width: 1.75em;
 `
 
-const CoverImage = ({ className, list, heading, children }) => {
+const CoverImage = ({ className, list, heading, children, callToAction }) => {
   return (
     <StyledCoverImage className={className}>
       {children}
@@ -37,7 +36,7 @@ const CoverImage = ({ className, list, heading, children }) => {
             ))}
           </ul>
         )}
-        <AppButtons />
+        {callToAction && <>{callToAction}</>}
       </Container>
     </StyledCoverImage>
   )
@@ -54,6 +53,7 @@ CoverImage.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.string,
   children: PropTypes.node,
+  callToAction: PropTypes.node,
 }
 
 export default CoverImage

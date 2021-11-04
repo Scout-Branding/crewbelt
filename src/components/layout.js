@@ -36,7 +36,6 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={meta?.title || `Title`}
         portalLink={meta?.portalLink || ``}
-        appLinks={meta?.appLinks || {}}
       />
       <main>{children}</main>
       <Footer

@@ -1,11 +1,11 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import tw, { styled, theme } from "twin.macro"
+import tw, { styled } from "twin.macro"
 import Container from "./container"
 import { H3 } from "./headings"
 
 const StyledRow = styled.section`
-  ${tw`py-24 bg-brand-gray-200`}
+  ${tw`py-24 bg-brand-gray-100`}
 `
 
 const IconRow = ({ className, children, heading }) => {

@@ -5,7 +5,8 @@ import tw, { styled } from "twin.macro"
 const StyledWrap = styled.div`
   ${tw`w-1/3 px-12 text-xl font-extrabold tracking-wide text-center`}
 
-  img {
+  img,
+  svg {
     ${tw`h-40 mx-auto mb-9`}
   }
 `

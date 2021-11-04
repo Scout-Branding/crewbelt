@@ -49,7 +49,7 @@ const LinkUnderline = styled.a`
   }
 `
 
-const Header = ({ siteTitle, portalLink, appLinks }) => (
+const Header = ({ siteTitle, portalLink }) => (
   <StyledHeader>
     <nav aria-label="Primary">
       <NavContainer>

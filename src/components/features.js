@@ -67,20 +67,18 @@ const StyledTransition = styled.div`
 
 const styledImageVariants = {
   mobile: css`
-    ${tw`lg:w-1/4`}
-
     &::before {
+      ${tw`bg-contain`}
       background-image: url(${bgMobile});
     }
 
     img {
-      padding: 13% 0;
+      padding: 6% 0;
     }
   `,
   desktop: css`
-    ${tw`lg:w-2/3`}
-
     &::before {
+      ${tw`bg-cover`}
       background-image: url(${bgDesktop});
     }
 
@@ -92,11 +90,11 @@ const styledImageVariants = {
 
 const StyledImage = styled(Image)(() => [
   css`
-    ${tw`absolute top-0 bottom-0 transform -translate-x-1/2 left-1/2`}
+    ${tw`absolute top-0 bottom-0 transform -translate-x-1/2 left-1/2 lg:w-2/3`}
     height: 600px;
 
     &::before {
-      ${tw`absolute inset-0 z-10 bg-center bg-no-repeat bg-cover`}
+      ${tw`absolute inset-0 z-10 bg-center bg-no-repeat`}
       content: "";
     }
   `,

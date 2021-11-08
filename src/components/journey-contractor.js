@@ -9,7 +9,7 @@ import CoverImage from "./cover-image"
 import AppButtons from "./app-buttons"
 import iconCalendar from "../images/icon-calendar.svg"
 import iconContractor from "../images/icon-contractor.svg"
-import iconMap from "../images/icon-map.svg"
+import IconMap from "../icons/icon-map"
 
 const StyledCoverImage = styled(GatsbyImage)`
   ${tw`absolute inset-0`}
@@ -66,17 +66,14 @@ const JourneyContractor = () => {
         ]}
       />
       <IconRow heading="As an independent contractor, CrewBelt enables you to:">
-        <IconWrap>
+        <IconWrap heading="Increase your value">
           <img src={iconContractor} alt="" />
-          Increase your value
         </IconWrap>
-        <IconWrap>
-          <img src={iconMap} alt="" />
-          See more opportunities
+        <IconWrap heading="See more opportunities">
+          <IconMap />
         </IconWrap>
-        <IconWrap>
+        <IconWrap heading="Control your schedule">
           <img src={iconCalendar} alt="" />
-          Control your schedule
         </IconWrap>
       </IconRow>
       <CoverImage

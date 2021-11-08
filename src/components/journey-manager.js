@@ -76,17 +76,14 @@ const JourneyManager = () => {
         ]}
       />
       <IconRow heading="As a project manager, CrewBelt provides:">
-        <IconWrap>
-          <img src={iconMoney} alt="" />A cost-effective solution to engage
-          quality contract labor
+        <IconWrap heading="A cost-effective solution to engage quality contract labor">
+          <img src={iconMoney} alt="" tw="w-36" />
         </IconWrap>
-        <IconWrap>
+        <IconWrap heading="Transparency and visibility into the contract labor force">
           <img src={iconSelect} alt="" />
-          Transparency and visibility into the contract labor force
         </IconWrap>
-        <IconWrap>
+        <IconWrap heading="Broadened access to a skilled workforce">
           <IconMap />
-          Broadened access to a skilled workforce
         </IconWrap>
       </IconRow>
       <CoverImage

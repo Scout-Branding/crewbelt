@@ -1,5 +1,58 @@
 <svg version="1.1" id="icon-calendar"
   xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 266 194.8" xml:space="preserve">
+  <style>
+    .icon-calendar--x-1 {
+      animation: calendarX3 7.5s infinite;
+      transform-origin: 34.9% 84%;
+    }
+    .icon-calendar--x-2 {
+      animation: calendarX2 7.5s infinite;
+      transform-origin: 82% 49.2%;
+    }
+    .icon-calendar--x-3 {
+      animation: calendarX1 7.5s infinite;
+      transform-origin: 66% 49.2%;
+    }
+    @keyframes calendarX1 {
+      0%,
+      48%,
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      54%,
+      96% {
+          opacity: 1;
+          transform: scale(1);
+      }
+    }
+    @keyframes calendarX2 {
+      0%,
+      58%,
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      64%,
+      96% {
+          opacity: 1;
+          transform: scale(1);
+      }
+    }
+    @keyframes calendarX3 {
+      0%,
+      68%,
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      74%,
+      96% {
+          opacity: 1;
+          transform: scale(1);
+      }
+    }
+  </style>
   <path d="M0 34.6v146.6c0 7.6 6.1 13.7 13.7 13.7h217.9c7.5 0 13.6-6.1 13.7-13.7V34.6c0-7.6-6.2-13.7-13.7-13.7H13.7C6.1 20.9 0 27 0 34.6z" fill="#afc8ff"/>
   <g>
     <path d="M26.3 191.3c-5.6 0-10.2-4.6-10.2-10.2V34.6c0-5.6 4.6-10.2 10.2-10.2h216.1c5.6 0 10.2 4.6 10.2 10.2v146.5c0 5.6-4.6 10.2-10.2 10.2H26.3z" fill="#fff"/>
@@ -29,8 +82,8 @@
   </g>
   <path d="M49.6 52.7h169.6c1.3 0 2.4 1.1 2.4 2.4v11.7c0 1.3-1.1 2.4-2.4 2.4H49.6c-1.3 0-2.4-1.1-2.4-2.4V55.1c0-1.3 1.1-2.4 2.4-2.4z" fill="#4164ff"/>
   <g fill="#ffb90a">
-    <path id="icon-calendar-X3" d="m193.6 82.1-3.9-3.9L175.8 92 162 78.1l-3.9 3.9 13.8 13.8-13.9 14 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9L179.6 96l14-13.9z"/>
-    <path id="icon-calendar-X2" d="m235.9 82.1-3.9-3.9L218.1 92l-13.8-13.8-3.9 3.9 13.8 13.8-13.8 13.8 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9L222 95.9l13.9-13.8z"/>
-    <path id="icon-calendar-X1" d="m110.6 149.8-3.9-3.9-13.8 13.8-13.8-13.8-3.9 3.9L89 163.6l-14 13.9 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9-13.8-13.8 14-13.9z"/>
+    <path class="icon-calendar--x-3" d="m193.6 82.1-3.9-3.9L175.8 92 162 78.1l-3.9 3.9 13.8 13.8-13.9 14 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9L179.6 96l14-13.9z"/>
+    <path class="icon-calendar--x-2" d="m235.9 82.1-3.9-3.9L218.1 92l-13.8-13.8-3.9 3.9 13.8 13.8-13.8 13.8 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9L222 95.9l13.9-13.8z"/>
+    <path class="icon-calendar--x-1" d="m110.6 149.8-3.9-3.9-13.8 13.8-13.8-13.8-3.9 3.9L89 163.6l-14 13.9 3.9 3.9 13.8-13.8 13.8 13.8 3.9-3.9-13.8-13.8 14-13.9z"/>
   </g>
 </svg>

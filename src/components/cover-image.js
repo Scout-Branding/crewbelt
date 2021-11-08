@@ -9,7 +9,7 @@ const StyledCoverImage = styled.section`
 `
 
 const Heading = styled.h3`
-  ${tw`w-1/4 text-6xl uppercase mb-9 font-display`}
+  ${tw`text-6xl uppercase md:w-1/2 xl:w-1/4 mb-9 font-display`}
 `
 
 const CheckWrap = styled.span`

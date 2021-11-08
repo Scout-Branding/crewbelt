@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 
 const StyledButton = styled.a`
-  ${tw`inline-block px-6 py-2 text-sm tracking-wide text-white uppercase transition transform translate-y-0 rounded-full cursor-pointer bg-brand-secondary`}
+  ${tw`inline-block px-6 py-2 my-1 text-sm tracking-wide text-white uppercase transition transform translate-y-0 rounded-full cursor-pointer bg-brand-secondary`}
 
   &:hover {
     ${tw`shadow-lg`}

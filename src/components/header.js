@@ -9,7 +9,7 @@ import headerBg from "../images/header-bg.svg"
 import logo from "../images/crewbelt-logo.svg"
 
 const StyledHeader = styled.header`
-  ${tw`relative py-24 bg-center bg-no-repeat`}
+  ${tw`relative py-8 bg-center bg-no-repeat md:py-12 lg:py-24`}
   background-image: url(${headerBg});
   background-size: auto 110%;
 
@@ -33,7 +33,7 @@ const NavContainer = styled(Container)`
 `
 
 const LinkUnderline = styled.a`
-  ${tw`inline-block font-extrabold leading-loose tracking-wider uppercase transition-colors text-brand-primary`}
+  ${tw`hidden text-base font-extrabold leading-loose tracking-wider uppercase transition-colors sm:inline-block text-brand-primary`}
 
   &::after {
     ${tw`block w-full h-1 transition-colors rounded-sm bg-brand-primary`}
@@ -69,21 +69,21 @@ const Header = ({ siteTitle, portalLink }) => (
         </div>
       </NavContainer>
     </nav>
-    <Container tw="py-32">
-      <h1 tw="font-display uppercase text-7xl 2xl:text-8xl mb-6 w-7/12">
+    <Container tw="py-8 md:py-16 lg:py-32">
+      <h1 tw="font-display uppercase text-5xl md:text-7xl 2xl:text-8xl mb-6 md:w-10/12 lg:w-7/12">
         Go from Connection to Construction, on Demand.
       </h1>
-      <p tw="text-xl mb-9 w-5/12">
+      <p tw="text-xl mb-9 md:w-7/12">
         CrewBelt is the only digital employment platform that instantly connects
         independent electricians with contractors who need skilled talent on
         jobsites.
       </p>
-      <div tw="w-7/12">
+      <div tw="md:w-7/12">
         <AppButtons />
       </div>
     </Container>
 
-    <div tw="w-1/2 absolute left-1/2 bottom-0">
+    <div tw="w-1/2 absolute left-1/2 bottom-0 hidden md:block">
       <StaticImage
         src="../images/header-phone.png"
         width={600}

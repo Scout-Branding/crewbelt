@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import tw, { styled, theme } from "twin.macro"
 
 const StyledH2 = styled.h2`
-  ${tw`mb-12 text-4xl font-medium text-center`}
+  ${tw`mb-12 text-2xl font-extrabold text-center lg:font-medium sm:text-3xl md:text-4xl`}
 `
 
 export const H2 = ({ className, children }) => {

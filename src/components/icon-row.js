@@ -5,7 +5,7 @@ import Container from "./container"
 import { H3 } from "./headings"
 
 const StyledRow = styled.section`
-  ${tw`py-24 bg-brand-gray-100`}
+  ${tw`py-12 lg:py-24 bg-brand-gray-100`}
 `
 
 const IconRow = ({ className, children, heading }) => {
@@ -13,7 +13,7 @@ const IconRow = ({ className, children, heading }) => {
     <StyledRow className={className}>
       <Container>
         {heading && <H3 tw="mb-16">{heading}</H3>}
-        <div tw="flex justify-center">{children}</div>
+        <div tw="flex flex-wrap justify-center">{children}</div>
       </Container>
     </StyledRow>
   )

@@ -10,21 +10,23 @@ import bgMobile from "../images/mask-mobile.png"
 import bgDesktop from "../images/mask-desktop.png"
 
 const FeaturesWrap = styled.div`
-  ${tw`relative flex items-center justify-between overflow-hidden text-2xl font-medium`}
+  ${tw`relative flex flex-col overflow-hidden text-2xl font-medium lg:flex-row lg:items-center lg:justify-between`}
   min-height: 600px;
 `
 
 const featureListVariants = {
-  mobile: tw`w-1/3`,
-  desktop: tw`w-1/4`,
+  mobile: tw`lg:w-1/3`,
+  desktop: tw`lg:w-1/4`,
 }
 
 const FeatureList = styled.ul(() => [
-  tw`relative z-20`,
+  tw`relative z-20 order-last lg:order-none`,
   ({ type = "mobile" }) => featureListVariants[type],
 ])
 
 const StyledTransition = styled.div`
+  ${tw`hidden lg:block`}
+
   .fade-enter {
     [data-main-image] {
       ${tw`(transform translate-y-1/2 opacity-0)!`}
@@ -65,7 +67,7 @@ const StyledTransition = styled.div`
 
 const styledImageVariants = {
   mobile: css`
-    ${tw`w-1/4`}
+    ${tw`lg:w-1/4`}
 
     &::before {
       background-image: url(${bgMobile});
@@ -76,7 +78,7 @@ const styledImageVariants = {
     }
   `,
   desktop: css`
-    ${tw`w-2/3`}
+    ${tw`lg:w-2/3`}
 
     &::before {
       background-image: url(${bgDesktop});

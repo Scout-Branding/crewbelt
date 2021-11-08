@@ -9,9 +9,13 @@ import JourneyManager from "../components/journey-manager"
 import diamondPlate from "../images/diamond-plate.svg"
 
 const How = styled.div`
-  ${tw`py-24 text-center bg-top bg-repeat bg-brand-gray-100`}
+  ${tw`py-12 text-center bg-top bg-repeat md:py-24 bg-brand-gray-100`}
   background-image: url(${diamondPlate});
-  background-size: 77px;
+  background-size: 47px;
+
+  @media (min-width: ${theme`screens.md`}) {
+    background-size: 77px;
+  }
 `
 
 const Tabs = styled.div`
@@ -26,7 +30,7 @@ const Tabs = styled.div`
 `
 
 const TabButton = styled.button`
-  ${tw`relative z-10 w-1/2 px-3 py-4 text-lg font-bold leading-tight text-center rounded-full md:tracking-wide`}
+  ${tw`relative z-10 w-1/2 px-3 py-2 font-bold leading-tight text-center rounded-full sm:py-4 md:text-lg md:tracking-wide`}
 
   &::before {
     ${tw`absolute z-0 w-0 h-1 duration-200 ease-in-out transform -translate-x-1/2 bg-transparent rounded-full left-1/2`}
@@ -151,7 +155,9 @@ const IndexPage = () => {
       <Seo />
       <How ref={scrollToRef}>
         <Container>
-          <h2 tw="font-extrabold text-3xl">How will you be using CrewBelt?</h2>
+          <h2 tw="font-extrabold text-2xl md:text-3xl mb-6 md:mb-0">
+            How will you be using CrewBelt?
+          </h2>
         </Container>
       </How>
       <Container>

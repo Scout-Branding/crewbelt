@@ -35,11 +35,11 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <div tw="w-1/4 mb-16">
+        <div tw="md:w-1/4 mb-16">
           <img src={logoIcon} alt={siteTitle} tw="w-24" />
         </div>
 
-        <div tw="w-1/4 mb-16">
+        <div tw="md:w-1/4 mb-16">
           <span tw="font-extrabold">Need Help?</span>
           <br />
           <FooterLink
@@ -49,7 +49,7 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
           <FooterLink link="tel:+18885550000" title="888.555.0000" />
         </div>
 
-        <div tw="w-1/4 mb-16">
+        <div tw="md:w-1/4 mb-16">
           {portalLink && (
             <FooterLink
               link={portalLink}
@@ -65,13 +65,18 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
           />
         </div>
 
-        <div tw="w-1/4 mb-16 text-right">
+        <div tw="md:w-1/4 mb-16 text-right flex">
           {appLinks?.ios && (
-            <a href={appLinks.ios} target="_blank" rel="noopener noreferrer">
+            <a
+              href={appLinks.ios}
+              target="_blank"
+              rel="noopener noreferrer"
+              tw="mr-4"
+            >
               <img
                 src={downloadIos}
                 alt="Download on the App Store"
-                tw="h-12 inline-block mr-4"
+                tw="h-12 inline-block"
               />
             </a>
           )}

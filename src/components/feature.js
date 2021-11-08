@@ -8,7 +8,7 @@ const StyledFeature = styled.li`
   &::before {
     ${tw`absolute bottom-0 z-0 w-0 h-1 duration-200 ease-in-out transform -translate-x-1/2 bg-transparent rounded-full left-1/2`}
     content: '';
-    transform-property: background-color, height, width;
+    transition-property: background-color, height, width;
   }
 
   @media (min-width: ${theme`screens.lg`}) {

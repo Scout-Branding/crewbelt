@@ -30,13 +30,13 @@ const Tabs = styled.div`
 `
 
 const TabButton = styled.button`
-  ${tw`relative z-10 w-1/2 px-3 py-2 font-bold leading-tight text-center rounded-full sm:py-4 md:text-lg md:tracking-wide`}
+  ${tw`relative z-10 w-1/2 px-3 py-2 font-bold leading-tight text-center rounded-full outline-none sm:py-4 md:text-lg md:tracking-wide focus:outline-none`}
 
   &::before {
     ${tw`absolute z-0 w-0 h-1 duration-200 ease-in-out transform -translate-x-1/2 bg-transparent rounded-full left-1/2`}
     content: '';
     top: -2px;
-    transform-property: background-color, width;
+    transition-property: background-color, width;
   }
 
   &:hover::before {

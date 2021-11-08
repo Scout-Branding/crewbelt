@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import tw, { styled, css } from "twin.macro"
+import tw, { styled, css, theme } from "twin.macro"
 import { SwitchTransition, CSSTransition } from "react-transition-group"
 import Container from "./container"
 import { H2 } from "./headings"
@@ -73,7 +73,19 @@ const styledImageVariants = {
     }
 
     img {
-      padding: 6% 0;
+      padding: 7.5% 0;
+    }
+
+    @media (min-width: ${theme`screens.xl`}) {
+      img {
+        padding: 6% 0;
+      }
+    }
+
+    @media (min-width: ${theme`screens.2xl`}) {
+      img {
+        padding: 4.9% 0;
+      }
     }
   `,
   desktop: css`
@@ -83,7 +95,19 @@ const styledImageVariants = {
     }
 
     img {
-      padding: 20% 0;
+      padding: 30% 0;
+    }
+
+    @media (min-width: ${theme`screens.xl`}) {
+      img {
+        padding: 20% 0;
+      }
+    }
+
+    @media (min-width: ${theme`screens.2xl`}) {
+      img {
+        padding: 13.5% 0;
+      }
     }
   `,
 }

@@ -9,7 +9,7 @@ const StyledWrap = styled.div`
     ${tw`flex items-center justify-center w-40 max-w-full mx-auto mb-9`}
 
     > * {
-      ${tw`max-w-full max-h-full`}
+      ${tw`w-full max-w-full max-h-full`}
     }
   }
 

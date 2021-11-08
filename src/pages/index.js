@@ -39,13 +39,17 @@ const TabButton = styled.button`
     transition-property: background-color, width;
   }
 
-  &:hover::before {
-    ${tw`w-24`}
+  &:hover,
+  &:active,
+  &:focus {
+    &::before {
+      ${tw`w-24`}
 
-    background-color: var(
+      background-color: var(
       --tabs-highlight,
       ${theme`colors.brand.highlight.contractor`}
     );
+    }
   }
 
   &[data-journey="manager"] {

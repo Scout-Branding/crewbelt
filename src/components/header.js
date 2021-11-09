@@ -33,18 +33,26 @@ const NavContainer = styled(Container)`
 `
 
 const LinkUnderline = styled.a`
-  ${tw`hidden text-base font-extrabold leading-loose tracking-wider uppercase transition-colors sm:inline-block text-brand-primary`}
+  ${tw`relative hidden text-base font-extrabold leading-loose tracking-wider uppercase transition-colors sm:inline-block text-brand-primary`}
+
+  &::before,
+  &::after {
+    ${tw`absolute bottom-0 block h-1 rounded-sm`}
+    content: "";
+  }
+
+  &::before {
+    ${tw`z-10 w-0 duration-200 ease-in-out transform -translate-x-1/2 left-1/2 bg-brand-highlight-manager`}
+    transition-property: width;
+  }
 
   &::after {
-    ${tw`block w-full h-1 transition-colors rounded-sm bg-brand-primary`}
-    content: '';
+    ${tw`w-full bg-brand-primary`}
   }
 
   &:hover {
-    ${tw`text-brand-secondary`}
-
-    &::after {
-      ${tw`bg-brand-secondary`}
+    &::before {
+      ${tw`w-full`}
     }
   }
 `

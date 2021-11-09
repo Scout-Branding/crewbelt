@@ -41,27 +41,27 @@ const JourneyContractor = () => {
         features={[
           {
             text: "Market yourself with a customizable profile",
-            image: "test-1.png",
+            image: "features-mobile-1.png",
           },
           {
             text: "Quickly apply for projects that interest you",
-            image: "test-2.png",
+            image: "features-mobile-2.png",
           },
           {
             text: "Negotiate your pay rate",
-            image: "test-1.png",
+            image: "features-mobile-3.png",
           },
           {
             text: "Electronically submit your time",
-            image: "test-2.png",
+            image: "features-mobile-4.png",
           },
           {
             text: "Receive payment via direct deposit",
-            image: "test-1.png",
+            image: "features-mobile-5.png",
           },
           {
             text: "Earn more opportunities through the rating system",
-            image: "test-2.png",
+            image: "test-1.png",
           },
         ]}
       />

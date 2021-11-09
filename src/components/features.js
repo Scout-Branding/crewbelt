@@ -78,7 +78,7 @@ const styledImageVariants = {
 
     @media (min-width: ${theme`screens.xl`}) {
       img {
-        padding: 6% 0;
+        padding: 5.8% 0;
       }
     }
 

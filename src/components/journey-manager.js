@@ -42,36 +42,36 @@ const JourneyManager = () => {
         }`}
       </style>
       <Features
-        heading="Find and hire quality labor with a streamlined recruitment process."
+        heading="Add quality personnel to your crew with a streamlined recruitment process."
         type="desktop"
         features={[
           {
             text: "Quickly find talent to hire for a job",
-            image: "test-desktop-1.png",
+            image: "features-desktop-1.png",
           },
           {
             text: "See tradesman ratings from past engagements",
-            image: "test-desktop-2.png",
+            image: "features-desktop-2.png",
           },
           {
             text: "Search for applicants with a specific skill set",
-            image: "test-desktop-1.png",
+            image: "features-desktop-3.png",
           },
           {
             text: "Negotiate pay rate",
-            image: "test-desktop-2.png",
+            image: "features-desktop-4.png",
           },
           {
             text: "Collect time electronically",
-            image: "test-desktop-1.png",
+            image: "features-desktop-5.png",
           },
           {
             text: "Receive automated invoices",
-            image: "test-desktop-2.png",
+            image: "features-desktop-6.png",
           },
           {
             text: "Pay automatically upon approval of invoice",
-            image: "test-desktop-1.png",
+            image: "features-desktop-7.png",
           },
         ]}
       />

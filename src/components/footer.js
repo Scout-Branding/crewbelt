@@ -97,8 +97,7 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
         </div>
 
         <Colophon id="colophon">
-          &copy; {new Date().getFullYear()}, Marathon Electrical Contractors.
-          All rights reserved.
+          &copy; {new Date().getFullYear()}, CrewBelt, LLC. All rights reserved.
           <br />
           <a
             href="https://scoutbrand.com"

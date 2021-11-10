@@ -83,8 +83,7 @@ const Header = ({ siteTitle, portalLink }) => (
       </h1>
       <p tw="text-xl mb-9 md:w-7/12">
         CrewBelt is the only digital employment platform that instantly connects
-        independent electricians with contractors who need skilled talent on
-        jobsites.
+        tradespeople with project managers who need skilled talent on jobsites.
       </p>
       <div tw="md:w-7/12">
         <AppButtons />

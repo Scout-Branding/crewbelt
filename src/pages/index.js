@@ -171,7 +171,7 @@ const IndexPage = () => {
             data-index={0}
             data-journey="contractor"
           >
-            I'm an Independent Electrician
+            I'm a Tradesperson
           </TabButton>
           <TabButton
             onClick={handleClick}

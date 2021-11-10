@@ -61,7 +61,7 @@ const JourneyContractor = () => {
           },
           {
             text: "Earn more opportunities through the rating system",
-            image: "test-1.png",
+            image: "features-mobile-6.png",
           },
         ]}
       />

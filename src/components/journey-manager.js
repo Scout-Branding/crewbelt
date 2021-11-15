@@ -42,7 +42,7 @@ const JourneyManager = () => {
         }`}
       </style>
       <Features
-        heading="Add quality personnel to your crew with a streamlined recruitment process."
+        heading="Add quality personnel to your crew with a streamlined search process."
         type="desktop"
         features={[
           {

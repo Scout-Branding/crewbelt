@@ -65,7 +65,7 @@ const JourneyContractor = () => {
           },
         ]}
       />
-      <IconRow heading="As an independent contractor, CrewBelt enables you to:">
+      <IconRow heading="As a tradesperson, CrewBelt enables you to:">
         <IconWrap heading="Increase your value">
           <img src={iconContractor} alt="" />
         </IconWrap>

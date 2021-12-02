@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://crewbelt.com/`,
     portalLink: `https://app.crewbelt.com/account/sign-in`,
     appLinks: {
-      microsoft: `https://www.microsoft.com/en-us/p/dropbox-for-s-mode/9wzdncrfj0pk`,
+      microsoft: ``,
       ios: `https://apps.apple.com/us/app/crewbelt/id1580751891`,
     },
   },

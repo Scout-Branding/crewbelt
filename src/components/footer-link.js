@@ -13,7 +13,11 @@ const StyledLink = styled.a`
 const FooterLink = ({ link, target, title }) => {
   return (
     <>
-      <StyledLink href={link} target={target}>
+      <StyledLink
+        href={link}
+        target={target}
+        rel={target ? "noopener noreferrer" : ""}
+      >
         {title}
       </StyledLink>
       <br />

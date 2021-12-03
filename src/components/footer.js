@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 import Container from "./container"
 import FooterLink from "./footer-link"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import logoIcon from "../images/crewbelt-logo-icon.svg"
 import downloadIos from "../images/download-ios.svg"
 import downloadMicrosoft from "../images/download-microsoft.svg"
@@ -67,7 +68,7 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
 
         <div tw="md:w-1/4 mb-16 text-right flex">
           {appLinks?.ios && (
-            <a
+            <OutboundLink
               href={appLinks.ios}
               target="_blank"
               rel="noopener noreferrer"
@@ -78,11 +79,11 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
                 alt="Download on the App Store"
                 tw="h-12 inline-block"
               />
-            </a>
+            </OutboundLink>
           )}
 
           {appLinks?.microsoft && (
-            <a
+            <OutboundLink
               href={appLinks.microsoft}
               target="_blank"
               rel="noopener noreferrer"
@@ -92,14 +93,14 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
                 alt="Get it from Microsoft"
                 tw="h-12 inline-block"
               />
-            </a>
+            </OutboundLink>
           )}
         </div>
 
         <Colophon id="colophon">
           &copy; {new Date().getFullYear()}, CrewBelt, LLC. All rights reserved.
           <br />
-          <a
+          <OutboundLink
             href="https://scoutbrand.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -117,7 +118,7 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
               </g>
             </svg>
             <span>Site by Scout Branding</span>
-          </a>
+          </OutboundLink>
         </Colophon>
       </StyledContainer>
     </StyledFooter>

@@ -1,8 +1,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-const StyledButton = styled.a`
+const StyledButton = styled(OutboundLink)`
   ${tw`inline-block px-6 py-2 my-1 text-sm tracking-wide text-white uppercase transition transform translate-y-0 rounded-full cursor-pointer bg-brand-secondary`}
 
   &:hover {

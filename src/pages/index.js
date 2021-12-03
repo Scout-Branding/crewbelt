@@ -132,6 +132,12 @@ const IndexPage = () => {
     setFirstLoad(true)
     setTabIndex(event.target.dataset.index)
     setJourney(event.target.dataset.journey)
+
+    // Analytics
+    typeof window !== "undefined" &&
+      window.gtag("event", "change_journey", {
+        journey: event.target.dataset.journey,
+      })
   }
 
   React.useEffect(() => {

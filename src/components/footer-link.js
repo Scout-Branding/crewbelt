@@ -1,8 +1,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-const StyledLink = styled.a`
+const StyledLink = styled(OutboundLink)`
   ${tw`transition-colors border-b border-transparent`}
 
   &:hover {

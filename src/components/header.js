@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { StaticImage } from "gatsby-plugin-image"
 import Container from "./container"
 import AppButtons from "./app-buttons"
@@ -32,7 +33,7 @@ const NavContainer = styled(Container)`
   ${tw`flex items-end justify-between pb-6`}
 `
 
-const LinkUnderline = styled.a`
+const LinkUnderline = styled(OutboundLink)`
   ${tw`relative hidden text-base font-extrabold leading-loose tracking-wider uppercase transition-colors sm:inline-block text-brand-primary`}
 
   &::before,

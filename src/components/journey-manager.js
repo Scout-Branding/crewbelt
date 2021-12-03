@@ -58,7 +58,7 @@ const JourneyManager = () => {
             image: "features-desktop-3.png",
           },
           {
-            text: "Negotiate pay rate",
+            text: "Negotiate rates",
             image: "features-desktop-4.png",
           },
           {

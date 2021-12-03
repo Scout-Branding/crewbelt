@@ -46,7 +46,7 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
             link="mailto:support@crewbelt.com"
             title="support@crewbelt.com"
           />
-          <FooterLink link="tel:+18885550000" title="888.555.0000" />
+          {/* <FooterLink link="tel:+18885550000" title="888.555.0000" /> */}
         </div>
 
         <div tw="md:w-1/4 mb-16">

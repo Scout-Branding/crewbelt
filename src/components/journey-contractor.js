@@ -48,7 +48,7 @@ const JourneyContractor = () => {
             image: "features-mobile-2.png",
           },
           {
-            text: "Negotiate your pay rate",
+            text: "Negotiate your rate",
             image: "features-mobile-3.png",
           },
           {

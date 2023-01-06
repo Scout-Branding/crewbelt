@@ -83,9 +83,9 @@ const Header = ({ siteTitle, portalLink }) => (
         Go from Connection to Construction, on Demand.
       </h1>
       <p tw="text-xl mb-9 md:w-7/12">
-        CrewBelt&reg; is the only digital employment platform that instantly
-        connects tradespeople with project managers who need skilled talent on
-        jobsites.
+        CrewBelt<sup>&reg;</sup> is the only digital employment platform that
+        instantly connects tradespeople with project managers who need skilled
+        talent on jobsites.
       </p>
       <div tw="md:w-7/12">
         <AppButtons />

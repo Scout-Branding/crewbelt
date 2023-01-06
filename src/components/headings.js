@@ -7,7 +7,12 @@ const StyledH2 = styled.h2`
 `
 
 export const H2 = ({ className, children }) => {
-  return <StyledH2 className={className}>{children}</StyledH2>
+  return (
+    <StyledH2
+      className={className}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
+  )
 }
 
 H2.propTypes = {
@@ -22,7 +27,12 @@ const StyledH3 = styled.h3`
 `
 
 export const H3 = ({ className, children }) => {
-  return <StyledH3 className={className}>{children}</StyledH3>
+  return (
+    <StyledH3
+      className={className}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
+  )
 }
 
 H3.propTypes = {

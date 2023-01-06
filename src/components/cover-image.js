@@ -31,7 +31,7 @@ const CoverImage = ({ className, list, heading, children, callToAction }) => {
                 <CheckWrap>
                   <IconCheck />
                 </CheckWrap>
-                <span tw="pt-1">{item}</span>
+                <span tw="pt-1" dangerouslySetInnerHTML={{ __html: item }} />
               </li>
             ))}
           </ul>

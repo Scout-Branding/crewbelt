@@ -75,7 +75,7 @@ const JourneyManager = () => {
           },
         ]}
       />
-      <IconRow heading="As a project manager, CrewBelt provides:">
+      <IconRow heading="As a project manager, CrewBelt&reg; provides:">
         <IconWrap heading="A cost-effective solution to engage quality contract labor">
           <img src={iconMoney} alt="" tw="w-36" />
         </IconWrap>

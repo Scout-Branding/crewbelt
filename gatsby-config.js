@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `CrewBelt`,
+    title: `CrewBelt®`,
     description: `Go from connection to construction, on demand.`,
     author: `@scoutbranding`,
     siteUrl: `https://crewbelt.com/`,
@@ -35,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `CrewBelt`,
-        short_name: `CrewBelt`,
+        name: `CrewBelt®`,
+        short_name: `CrewBelt®`,
         description: `Go from connection to construction, on demand.`,
         start_url: `/`,
         background_color: `#e6e6e6`,

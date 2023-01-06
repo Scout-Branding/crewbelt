@@ -36,7 +36,7 @@ const JourneyContractor = () => {
         }`}
       </style>
       <Features
-        heading="CrewBelt gives you the freedom to find jobs that fit your skillset."
+        heading="CrewBelt&reg; gives you the freedom to find jobs that fit your skillset."
         type="mobile"
         features={[
           {
@@ -65,7 +65,7 @@ const JourneyContractor = () => {
           },
         ]}
       />
-      <IconRow heading="As a tradesperson, CrewBelt enables you to:">
+      <IconRow heading="As a tradesperson, CrewBelt&reg; enables you to:">
         <IconWrap heading="Increase your value">
           <img src={iconContractor} alt="" />
         </IconWrap>

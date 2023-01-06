@@ -166,7 +166,7 @@ const IndexPage = () => {
       <How ref={scrollToRef}>
         <Container>
           <h2 tw="font-extrabold text-2xl md:text-3xl mb-6 md:mb-0">
-            How will you be using CrewBelt?
+            How will you be using CrewBelt&reg;?
           </h2>
         </Container>
       </How>

@@ -6,8 +6,9 @@ module.exports = {
     siteUrl: `https://crewbelt.com/`,
     portalLink: `https://app.crewbelt.com/account/sign-in`,
     appLinks: {
-      microsoft: ``,
+      android: `https://play.google.com/store/apps/details?id=com.crewbeltmobile&hl=en`,
       ios: `https://apps.apple.com/us/app/crewbelt/id1580751891`,
+      windows: ``,
     },
   },
   plugins: [

@@ -20,8 +20,9 @@ const Layout = ({ children }) => {
           title
           portalLink
           appLinks {
+            android
             ios
-            microsoft
+            windows
           }
         }
       }

@@ -5,6 +5,7 @@ import Container from "./container"
 import FooterLink from "./footer-link"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import logoIcon from "../images/crewbelt-logo-icon.svg"
+import downloadAndroid from "../images/download-android.png"
 import downloadIos from "../images/download-ios.svg"
 import downloadMicrosoft from "../images/download-microsoft.svg"
 import termsOfUse from "../static/terms-of-use.pdf"
@@ -82,9 +83,24 @@ const Footer = ({ siteTitle, portalLink, appLinks }) => {
             </OutboundLink>
           )}
 
-          {appLinks?.microsoft && (
+          {appLinks?.android && (
             <OutboundLink
-              href={appLinks.microsoft}
+              href={appLinks.android}
+              target="_blank"
+              rel="noopener noreferrer"
+              tw="mr-4"
+            >
+              <img
+                src={downloadAndroid}
+                alt="Get it on Google Play"
+                tw="h-12 inline-block"
+              />
+            </OutboundLink>
+          )}
+
+          {appLinks?.windows && (
+            <OutboundLink
+              href={appLinks.windows}
               target="_blank"
               rel="noopener noreferrer"
             >

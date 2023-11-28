@@ -5,6 +5,7 @@ module.exports = {
     author: `@scoutbranding`,
     siteUrl: `https://crewbelt.com/`,
     portalLink: `https://app.crewbelt.com/account/sign-in`,
+    privacyLink: `https://app.crewbelt.com/privacy-policy`,
     appLinks: {
       android: `https://play.google.com/store/apps/details?id=com.crewbeltmobile&hl=en`,
       ios: `https://apps.apple.com/us/app/crewbelt/id1580751891`,

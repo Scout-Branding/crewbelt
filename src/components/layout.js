@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
           portalLink
-          privacyLink
           appLinks {
             android
             ios
@@ -41,7 +40,6 @@ const Layout = ({ children }) => {
       />
       <main>{children}</main>
       <Footer
-        privacyLink={meta?.privacyLink || ``}
         portalLink={meta?.portalLink || ``}
         appLinks={meta?.appLinks || {}}
       />

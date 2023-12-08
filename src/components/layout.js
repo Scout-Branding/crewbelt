@@ -10,9 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import ThemeStyles from "../styles/theme-styles"
 import Header from "./header"
+import HeaderPlain from "./header-plain"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, plainHeader }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,10 +35,21 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeStyles />
-      <Header
-        siteTitle={meta?.title || `Title`}
-        portalLink={meta?.portalLink || ``}
-      />
+      {plainHeader && (
+        <HeaderPlain
+          title={`Privacy Policy`}
+          siteTitle={meta?.title || `Title`}
+          portalLink={meta?.portalLink || ``}
+        />
+      )}
+
+      {!plainHeader && (
+        <Header
+          siteTitle={meta?.title || `Title`}
+          portalLink={meta?.portalLink || ``}
+        />
+      )}
+
       <main>{children}</main>
       <Footer
         portalLink={meta?.portalLink || ``}
